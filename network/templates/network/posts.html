@@ -1,0 +1,24 @@
+{% load static %}
+<div id="posts-view" class="postss">
+  <h2>{{header}}</h2>
+  {% for post in posts %}
+  <div id="{{ post.id }}" class="border rounded">
+    <a href="{% url 'profile' post.user %}">
+      <h5 class="userr">{{ post.user }}</h5>
+    </a>
+    {% if user.id == post.user.id %}
+    <button class="edit" type="button" onClick="editPost({{post.id}})">Edit</button>
+    {% endif %}
+    <div id="post{{ post.id }}-text">{{ post.post }}</div>
+    <span><small>{{ post.created }}</small></span><br>
+    <img src="{% static 'network/img/heart.png' %}" width="20px">
+    <span id="likes-counter-{{post.id}}">{{ post.likes_counter }}</span>
+    <button id="like" class="btn btn-light btn-sm" onClick="vote(this, {{user.id}}, x='like')"><img
+        src="{% static 'network/img/like.png' %}" width="20px"></button>
+    <button id="unlike" class="btn btn-light btn-sm" onClick="vote(this, {{user.id}}, x='unlike')"><img
+        src="{% static 'network/img/unlike.png' %}" width="25px"></button>
+  </div>
+  {% endfor %}
+
+  {% include 'network/pagination.html' %}
+</div>

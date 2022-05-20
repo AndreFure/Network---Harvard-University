@@ -1,0 +1,18 @@
+{% extends "network/layout.html" %}
+
+{% block body %}
+{% if user.is_authenticated %}
+
+{% load static %}
+<h3 class="proffile">{{ username }}'s Profile: </h3>
+<p id="num_followers" class="followers">Followers: {{ followers }}</p>
+<p id="num_follow" class="follow">Follow: {{ follow }}</p>
+{% if user.username != username %}
+<button type="button" class="btt" onClick="follow({{curent_user_id}}, x='follow')">Follow</button>
+<button type="button" class="btt" onClick="follow({{curent_user_id}}, x='unfollow')">Unfollow</button>
+<br><br>
+{% endif %}
+
+{% include 'network/posts.html' %}
+{% endif %}
+{% endblock %}

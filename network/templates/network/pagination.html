@@ -1,0 +1,21 @@
+{% block pagination %}
+<nav>
+  <ul class="pagination pagination-sm justify-content-center">
+    {% if posts.has_previous %}
+    <a class="page-link" href="?page=1">&laquo; first</a>
+    <a class="page-link" href="?page={{ posts.previous_page_number }}">previous</a>
+    {% endif %}
+
+    <li class="page-item">
+      <span class="page-link" style="color: #F05454">
+        {{ posts.number }} of {{ posts.paginator.num_pages }}.
+      </span>
+    </li>
+
+    {% if posts.has_next %}
+    <a class="page-link" href="?page={{ posts.next_page_number }}" style="color: #F05454">next ></a>
+    <a class="page-link" href="?page={{ posts.paginator.num_pages }}" style="color: #F05454">last &raquo;</a>
+    {% endif %}
+  </ul>
+</nav>
+{% endblock %}

@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+a .userr,
+.edit {
+  font-family: 'Jost', sans-serif;
+  color: #30475E;
+  font-weight: 700;
+}
+
+.edit {
+  width: 100px;
+  border-radius: 5px;
+  border: 2px solid #F05454;
+  border-radius: 5px;
+  background: linear-gradient(145deg, #dddddd, #ffffff);
+}
+
+.edit:hover {
+  background: linear-gradient(145deg, #ffffff, #dddddd);
+  box-shadow: 9px 9px 84px #e6e6e6, -9px -9px 84px #ffffff;
+  border: 2px solid #30475E;
+}
+
+body {
+  background-color: #F5F5F5;
+}
+
+.postss {
+  border-radius: 5px;
+  background-color: #F5F5F5;
+}
+
+.border,
+h2 {
+  padding: 15px;
+}
+
+/* I'll customize the footer for all pages*/
+footer {
+  margin-top: 10vh;
+  width: 100vw;
+  height: 35px;
+}
+
+footer .footerSpan {
+  border-bottom: 1px solid #dadce0;
+  background-color: rgb(231, 229, 229);
+}
+
+footer .footerSpan span {
+  color: rgba(0, 0, 0, .54);
+  padding-left: 27px;
+  font-size: 14px;
+  line-height: 40px;
+  font-family: arial, sans-serif;
+  display: flex;
+  align-items: center;
+}
+
+.footerSpan span img {
+  width: 10vw
+}
+
+@media (max-width: 768px) {
+  footer .footerSpan span img {
+    width: 18vw
+  }
+}
+
+@media screen and (max-width: 375px) {
+  footer .footerSpan span img {
+    width: 38vw
+  }
+}
+
+.heart {
+  width: 20px;
+}
+
+.proffile {
+  padding: 15px;
+  color: #30475E;
+}
+
+.followers,
+.follow {
+  padding: 15px;
+  color: #121212;
+}
+
+.btt {
+  border-radius: 5px;
+  background: linear-gradient(145deg, #ff5a5a, #d84c4c);
+  border: none;
+  width: 120px;
+  height: 40px;
+  color: #F5F5F5;
+  font-weight: 700;
+}
+
+.btt:hover {
+  border-radius: 5px;
+  background: linear-gradient(145deg, #334c65, #2b4055);
+}
+
+.navcontainer {
+  width: 100%;
+}
+
+.colnav {
+  width: 80vw;
+}
+
+.navv {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #30475E !important;
+}
+
+.navbarr {
+  width: 80vw;
+  height: 80px;
+  color: #121212;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-left: 10vw;
+
+}
+
+
+.column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.brnd {
+  color: #ff5a5a;
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.brnd:hover {
+  color: #F5F5F5;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+ul li a {
+  color: #F5F5F5;
+  font-weight: 600;
+}
+
+ul li a:hover {
+  color: #ff5a5a;
+}

@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>{% block title %}Social Network{% endblock %}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'network/styles.css' %}">
+    {% block script %}
+    <script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="{% static 'network/main.js' %}"></script>
+    {% endblock %}
+</head>
+
+<body>
+    <div id="navv" class="navv">
+        <nav class="navbarr">
+            <a class="brnd" href="{% url 'index' %}">Network</a>
+            <div>
+                <ul class="row">
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile/{{ user.username }}"><strong>{{ user.username }}</strong></a>
+                    </li>
+                    {% endif %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'index' %}">All Posts</a>
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'following' %}">Following</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Log Out</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'login' %}">Log In</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'register' %}">Register</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="container">
+        {% block body %}
+        {% endblock %}
+    </div>
+
+    <footer>
+        <div class="footerSpan"><span>By: Andrés Eduardo Genes</span>
+        </div>
+        <div class="footerSpan"><span><img
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Harvard_University_logo.svg/1280px-Harvard_University_logo.svg.png"
+                    alt="Harvard Logo" style="width: 12vw;"> - Cambridge, MA, United States</span>
+        </div>
+        <div class="footerSpan"><span>Professors: Brian Yu (brian@cs.harvard.edu) & David J. Malan
+                (malan@cs.harvard.edu).
+                <img src="https://online-learning.harvard.edu/sites/default/files/shields/harvard-engineering.png"
+                    alt="Harvard Logo" style="width: 25px; margin: 15px;"> Harvard School of Engineering and Applied
+                Sciences.</span>
+        </div>
+    </footer>
+</body>
+
+</html>
